@@ -1,0 +1,30 @@
+[user]
+	name = Jakob Wells
+	email = jakob.wells@telekom.de
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICHuCbUAcZd6KTaT3P6cnUY+2B8GPPbBSXkQLBm+Syf4
+
+[core]
+	excludesfile = /Users/A200273741/.gitignore-global
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true

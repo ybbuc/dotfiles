@@ -1,0 +1,4 @@
+gui:
+  screenMode: 'fullscreen'
+logs:
+  since: '24h'

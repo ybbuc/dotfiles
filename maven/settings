@@ -1,0 +1,13 @@
+<profiles>
+  <profile>
+    <id>java-version</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+      <maven.compiler.source>17.0.9</maven.compiler.source>
+      <maven.compiler.target>17.0.9</maven.compiler.target>
+      <maven.compiler.compilerVersion>17.0.9</maven.compiler.compilerVersion>
+    </properties>
+  </profile>
+</profiles>

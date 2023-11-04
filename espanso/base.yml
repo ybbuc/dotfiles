@@ -1,0 +1,175 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Print the current date
+  - trigger: ";date"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: date
+        params:
+          format: "%d.%m.%Y"
+
+  - trigger: ";rdate"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: date
+        params:
+          format: "%Y.%m.%d"
+
+  - trigger: ";tdate"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: date
+        params:
+          format: "%d_%m_%Y"
+
+  - trigger: ";yest"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: date
+        params:
+          format: "%d_%m_%Y"
+          offset: -86400
+
+  - trigger: ";idea"
+    replace: " -na \"IntelliJ IDEA.app\" --args"
+
+
+  - trigger: ":quote"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: choice
+        params:
+          values:
+            - "Every moment is a fresh beginning."
+            - "Everything you can imagine is real."
+            - "Whatever you do, do it well."
+
+  - trigger: ";p"
+    replace: "{{clipboard}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+
+  - trigger: ";dstop"
+    replace: "docker stop $(docker ps -q)"
+
+  - trigger: ";npmirs"
+    replace: "npm install && npm run start"
+
+  - trigger: ";his"
+    replace: "history | fzf"
+
+  - trigger: ";subdate"
+    replace: "{{subdate}}"
+    vars:
+      - name: subdate
+        type: shell
+        script: |
+          #!/bin/bash
+          python - <<END
+          from datetime import datetime, timedelta
+          import sys
+
+          try:
+              days_to_subtract = int(sys.argv[1])
+          except ValueError:
+              sys.exit(1)
+
+          current_date = datetime.now()
+          new_date = current_date - timedelta(days=days_to_subtract)
+          print(new_date.strftime('%Y-%m-%d'))
+          END
+  
+  - trigger: ";adj"
+    replace: "{{adjective}}"
+    vars:
+      - name: adjective
+        type: shell
+        params:
+          cmd: "wonderwords -w -p=adjective"
+
+  - trigger: ";dts"
+    replace: "Deutsche Telekom Security GmbH"
+
+  - trigger: ";dept"
+    replace: "Chapter Application Engineering"
+
+  - trigger: ";cost"
+    replace: "T5C0000097"
+
+  - trigger: ";wmail"
+    replace: "jakob.wells@telekom.de"
+
+  - trigger: ";wadd"
+    replace: "Bonner Talweg 100, 53113 Bonn"
+
+  - trigger: ";wstr"
+    replace: "Bonner Talweg 100"
+
+  - trigger: ";wpost"
+    replace: "53113"
+
+  - trigger: ";wmobil"
+    replace: "+49 160 99683723"
+
+  - trigger: ";hmobil"
+    replace: "+49 151 11680376"
+
+  - trigger: ";hadd"
+    replace: "Lichtenbergstraße 6, 32758 Detmold"
+
+  - trigger: ";hstr"
+    replace: "Lichtenbergstraße 6"
+
+  - trigger: ";bmail"
+    replace: "jw4061@bath.ac.uk"
+
+  - trigger: ";hpost"
+    replace: "32758"
+
+  - trigger: ";fg"
+    replace: "Freundliche Grüße\nJakob"
+
+  - trigger: ";vg"
+    replace: "Viele Grüße\nJakob"
+
+  - trigger: ";br"
+    replace: "Best regards,\nJakob"
+
+  - trigger: "-->"
+    replace: "→"
+
+# Umlauts
+  - trigger: "a;;"
+    replace: "ä"
+
+  - trigger: "o;;"
+    replace: "ö"
+
+  - trigger: "u;;"
+    replace: "ü"
+
+  - trigger: "s;;"
+    replace: "ß"
+
+  - trigger: "A;;"
+    replace: "Ä"
+
+  - trigger: "O;;"
+    replace: "Ö"
+
+  - trigger: "U;;"
+    replace: "Ü"

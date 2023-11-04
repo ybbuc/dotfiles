@@ -1,0 +1,32 @@
+{
+    "title": "Shift (⇧) + Delete (⌫) → Forward Delete",
+    "rules": [
+      {
+        "description": "Remap Shift (⇧) + Delete (⌫) to Forward Delete",
+        "manipulators": [
+          {
+            "type": "basic",
+            "from": {
+              "key_code": "delete_or_backspace",
+              "modifiers": {
+                "mandatory": [
+                  "shift"
+                ],
+                "optional": [
+                  "caps_lock"
+                ]
+              }
+            },
+            "to": [
+              {
+                "key_code": "delete_or_backspace",
+                "modifiers": [
+                  "fn"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,3 @@
+.DS_Store
+.sessionlog/
+**/docker/config/ssh_server/

@@ -1,0 +1,52 @@
+- defaults:
+    link:
+        force: true
+        create: true
+
+# - clean: ['~']
+
+# - clean:
+#   ~/.config:
+#     recursive: true
+
+# - create:
+#   - ~/repos
+
+- link:
+    # bat
+    ~/.config/bat/config: bat/config
+    # espanso
+    ~/Library/Application Support/espanso/match/base.yml: espanso/base.yml
+    ~/Library/Application Support/espanso/config/default.yml: espanso/default.yml
+    # fish
+    ~/.config/fish:
+        glob: true
+        path: fish/**
+    # git + zsh
+    ~/:
+        glob: true
+        path: home/*
+        prefix: '.'
+    # grc
+    ~/.grc/grc.conf: grc/grc.conf
+    # karabiner
+    ~/.config/karabiner:
+        glob: true
+        path: karabiner/**
+    # kitty
+    ~/.config/kitty:
+        glob: true
+        path: kitty/**
+    # lazydocker
+    ~/Library/Application Support/lazydocker/config.yml: lazydocker/config.yml
+    # lazygit
+    ~/Library/Application Support/lazygit/config.yml: lazygit/config.yml
+    # maven
+    ~/.m2/.settings: maven/settings
+    # ssh
+    ~/.ssh/config: ssh/config
+    ~/.config/1Password/ssh/agent.toml: ssh/agent.toml
+    # #ranger
+    # ~/.config/ranger:
+    #     glob: true
+    #     path: ranger/**
